@@ -17,41 +17,42 @@
         <!-- Customize your theme here. -->
 
         <!-- Font -->
-        <item name="android:textViewStyle">@style/TextViewStyle</item>
-        <item name="android:buttonStyle">@style/ButtonStyle</item>
-        <item name="android:editTextStyle">@style/EditTextStyle</item>
-        <item name="android:radioButtonStyle">@style/RadioButtonStyle</item>
-        <item name="android:checkboxStyle">@style/CheckboxStyle</item>
+<!--        <item name="android:textViewStyle">@style/TextViewStyle</item>-->
+<!--        <item name="android:buttonStyle">@style/ButtonStyle</item>-->
+<!--        <item name="android:editTextStyle">@style/EditTextStyle</item>-->
+<!--        <item name="android:radioButtonStyle">@style/RadioButtonStyle</item>-->
+<!--        <item name="android:checkboxStyle">@style/CheckboxStyle</item>-->
     </style>
 
-    <style name="TextViewStyle" parent="@android:style/Widget.DeviceDefault.TextView">
-        <item name="android:fontFamily">@res/roboto_regular</item>
-        <item name="android:includeFontPadding">false</item>
-    </style>
+<!--    <style name="TextViewStyle" parent="@android:style/Widget.DeviceDefault.TextView">-->
+<!--        <item name="android:fontFamily">@res/roboto_regular</item>-->
+<!--        <item name="android:includeFontPadding">false</item>-->
+<!--    </style>-->
 
-    <style name="ButtonStyle" parent="@android:style/Widget.DeviceDefault.Button.Borderless">
-        <item name="android:fontFamily">@res/roboto_regular</item>
-        <item name="android:includeFontPadding">false</item>
-    </style>
+<!--    <style name="ButtonStyle" parent="@android:style/Widget.DeviceDefault.Button.Borderless">-->
+<!--        <item name="android:fontFamily">@res/roboto_regular</item>-->
+<!--        <item name="android:includeFontPadding">false</item>-->
+<!--    </style>-->
 
-    <style name="EditTextStyle" parent="@android:style/Widget.DeviceDefault.EditText">
-        <item name="android:fontFamily">@res/roboto_regular</item>
-        <item name="android:includeFontPadding">false</item>
-    </style>
+<!--    <style name="EditTextStyle" parent="@android:style/Widget.DeviceDefault.EditText">-->
+<!--        <item name="android:fontFamily">@res/roboto_regular</item>-->
+<!--        <item name="android:includeFontPadding">false</item>-->
+<!--    </style>-->
 
-    <style name="RadioButtonStyle" parent="@android:style/Widget.DeviceDefault.CompoundButton.RadioButton">
-        <item name="android:fontFamily">@res/roboto_regular</item>
-        <item name="android:includeFontPadding">false</item>
-    </style>
+<!--    <style name="RadioButtonStyle" parent="@android:style/Widget.DeviceDefault.CompoundButton.RadioButton">-->
+<!--        <item name="android:fontFamily">@res/roboto_regular</item>-->
+<!--        <item name="android:includeFontPadding">false</item>-->
+<!--    </style>-->
 
-    <style name="CheckboxStyle" parent="@android:style/Widget.DeviceDefault.CompoundButton.CheckBox">
-        <item name="android:fontFamily">@res/roboto_regular</item>
-        <item name="android:includeFontPadding">false</item>
-    </style>
+<!--    <style name="CheckboxStyle" parent="@android:style/Widget.DeviceDefault.CompoundButton.CheckBox">-->
+<!--        <item name="android:fontFamily">@res/roboto_regular</item>-->
+<!--        <item name="android:includeFontPadding">false</item>-->
+<!--    </style>-->
 
     <!-- Text custom -->
     <style name="H1" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">@res/roboto_bold</item>
     </style>
 

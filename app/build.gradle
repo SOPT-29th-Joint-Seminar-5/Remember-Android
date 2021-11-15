@@ -12,6 +12,7 @@ android {
         configurations.all {
             resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
         }
+
         applicationId "com.sopt.remember"
         minSdkVersion 26
         targetSdkVersion 30

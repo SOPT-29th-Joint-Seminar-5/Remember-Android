@@ -48,4 +48,40 @@
         <item name="android:fontFamily">@res/roboto_regular</item>
         <item name="android:includeFontPadding">false</item>
     </style>
+
+    <!-- Text custom -->
+    <style name="H1" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@res/roboto_bold</item>
+    </style>
+
+    <style name="H2" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@res/roboto_regular</item>
+    </style>
+
+    <style name="H3" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@res/roboto_bold</item>
+    </style>
+
+    <style name="body1" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@res/roboto_regular</item>
+    </style>
+
+    <style name="body2" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@res/roboto_regular</item>
+    </style>
+
+    <style name="body3" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@res/roboto_regular</item>
+    </style>
+
+    <style name="Caption" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">8sp</item>
+        <item name="android:fontFamily">@res/roboto_regular</item>
+    </style>
 </resources>

@@ -3,18 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_bell.xml" value="0.522" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_businesscard.xml" value="0.522" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_bussinesscard.xml" value="0.522" />
         <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_career.xml" value="0.522" />
-        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_check.xml" value="0.522" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_comment.xml" value="0.522" />
         <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_comment2.xml" value="0.522" />
-        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_empty_heart.xml" value="0.522" />
-        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_heart.xml" value="0.522" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_community.xml" value="0.299" />
         <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_mypage.xml" value="0.522" />
-        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_namecard.xml" value="0.522" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/ic_post.xml" value="0.522" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/line_shadow.xml" value="0.299" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/line_shadow_reverse.xml" value="0.299" />
         <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/rectangle_fill_gray.xml" value="0.522" />
         <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/drawable/rectangle_fill_white.xml" value="0.522" />
-        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/layout/activity_post_view.xml" value="0.5536458333333333" />
-        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/layout/activity_post_write.xml" value="0.4519927536231884" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/layout/activity_home.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/layout/fragment_business_card.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/layout/fragment_career.xml" value="0.5390625" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/layout/fragment_community.xml" value="0.32472826086956524" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/layout/fragment_mypage.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/96jos/AndroidStudioProjects/Android/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.5536458333333333" />
       </map>
     </option>
   </component>

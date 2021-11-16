@@ -49,11 +49,13 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     // Retrofit2에서 gson 사용을 위한 컨버터
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
-    //gson
+    // gson
     implementation "com.google.code.gson:gson:2.8.6"
     // okhttp3
     implementation 'com.squareup.okhttp3:okhttp:3.14.9'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+    // floating action button
+    implementation 'com.android.support:design:30.0.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.7.0'

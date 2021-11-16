@@ -7,10 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-    <color name="remember_gray1">#F5F5F5</color>
-    <color name="remember_gray2">#CCCCCC</color>
-    <color name="remember_gray3">#AEAEAE</color>
-    <color name="remember_gray4">#8C8C8C</color>
-
+    <color name="main1">#EA5128</color>
+    <color name="main2">#FFB46E</color>
+    <color name="main3">#FFECDB</color>
+    <color name="sub">#FF0000</color>
+    <color name="gray1">#F5F5F5</color>
+    <color name="gray2">#CCCCCC</color>
+    <color name="gray3">#AEAEAE</color>
+    <color name="gray4">#8C8C8C</color>
 </resources>

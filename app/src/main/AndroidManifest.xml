@@ -12,13 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Remember">
         <activity android:name=".activity.PostViewActivity"></activity>
-        <activity android:name=".activity.PostWriteActivity" />
-        <activity android:name=".activity.HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--        <activity android:name=".activity.PostWriteActivity" />-->
+        <activity android:name=".activity.PostWriteActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
+        <activity android:name=".activity.HomeActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 

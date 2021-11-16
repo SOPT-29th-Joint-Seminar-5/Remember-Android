@@ -6,10 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".activity.PostWriteActivity">
 
-    <TextView
-        android:text="test"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_topbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+        android:layout_marginTop="24dp"
+        android:background="@drawable/shadow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_cancel"
+            android:layout_width="48dp"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_cancel"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_post_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_post_write"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_posting"
+            android:layout_width="48dp"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_posting_inactive"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_category"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/ellipse_fill_grey"
+        android:layout_marginTop="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="9dp"
+        android:text="@string/bt_category"
+        app:layout_constraintTop_toBottomOf="@id/cl_topbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,4 +2,15 @@
     <string name="app_name">Remember</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="tv_post_write">rptlrmf Tmrl</string>
+    <string name="bt_category">select community</string>
+
+    <string name="tv_job_community">job_community</string>
+    <string name="tv_interest_community">interest_community</string>
+    <string name="rb_job_designer">\trb_job_designer</string>
+    <string name="rb_job_marketing">\trb_job_marketing</string>
+    <string name="rb_job_IT">\trb_job_IT</string>
+    <string name="rb_job_growup">\trb_job_growup</string>
+
 </resources>

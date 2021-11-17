@@ -16,19 +16,20 @@
         <TextView
             android:id="@+id/tv_category_title"
             android:layout_width="wrap_content"
-            android:layout_height="67dp"
-            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:text="@string/tv_select_category"
             android:textColor="@color/black"
             android:textAppearance="@style/H1"
+            android:paddingTop="32dp"
+            android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/cl_dialog" />
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
+            android:paddingTop="13dp"
             app:layout_constraintTop_toBottomOf="@id/tv_category_title">
 
             <LinearLayout
@@ -54,7 +55,7 @@
                         android:id="@+id/rb_job_designer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_job_designer"
                         android:textAppearance="@style/body1" />
 
@@ -62,7 +63,7 @@
                         android:id="@+id/rb_job_marketing"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_job_marketing"
                         android:textAppearance="@style/body1" />
 
@@ -70,7 +71,7 @@
                         android:id="@+id/rb_job_IT"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_job_IT"
                         android:textAppearance="@style/body1" />
 
@@ -78,7 +79,7 @@
                         android:id="@+id/rb_job_growup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_job_growup"
                         android:textAppearance="@style/body1" />
 
@@ -113,7 +114,7 @@
                         android:id="@+id/rb_interest_company"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_interest_company"
                         android:textAppearance="@style/body1" />
 
@@ -121,7 +122,7 @@
                         android:id="@+id/rb_interest_discussion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_interest_discussion"
                         android:textAppearance="@style/body1" />
 
@@ -129,7 +130,7 @@
                         android:id="@+id/rb_interest_economy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_interest_economy"
                         android:textAppearance="@style/body1" />
 
@@ -137,7 +138,7 @@
                         android:id="@+id/rb_interest_hobby"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_interest_hobby"
                         android:textAppearance="@style/body1" />
 
@@ -145,7 +146,7 @@
                         android:id="@+id/rb_interest_career"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_interest_career"
                         android:textAppearance="@style/body1" />
 
@@ -153,7 +154,7 @@
                         android:id="@+id/rb_interest_retire"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_interest_retire"
                         android:textAppearance="@style/body1" />
 
@@ -161,7 +162,7 @@
                         android:id="@+id/rb_interest_global"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_interest_global"
                         android:textAppearance="@style/body1" />
 
@@ -169,7 +170,7 @@
                         android:id="@+id/rb_interest_employee1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_interest_employee1"
                         android:textAppearance="@style/body1" />
 
@@ -177,7 +178,7 @@
                         android:id="@+id/rb_interest_employee2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_interest_employee2"
                         android:textAppearance="@style/body1" />
 
@@ -185,7 +186,7 @@
                         android:id="@+id/rb_interest_employee3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_interest_employee3"
                         android:textAppearance="@style/body1" />
 
@@ -193,7 +194,7 @@
                         android:id="@+id/rb_interest_wine"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_interest_wine"
                         android:textAppearance="@style/body1" />
 
@@ -201,13 +202,13 @@
                         android:id="@+id/rb_interest_fame"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="14dp"
                         android:text="@string/rb_interest_fame"
                         android:textAppearance="@style/body1" />
                 </RadioGroup>
 
             </LinearLayout>
 
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

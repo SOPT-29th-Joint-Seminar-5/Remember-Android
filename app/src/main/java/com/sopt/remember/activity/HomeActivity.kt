@@ -33,10 +33,6 @@ class HomeActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-// TODO: 효림 코드
-//
-//        val fragment1 = CommunityFragment()
-//        supportFragmentManager.beginTransaction().add(R.id.container, fragment1).commit()
     }
 
     private fun initAdapter() {

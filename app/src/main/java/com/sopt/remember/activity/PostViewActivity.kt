@@ -13,6 +13,7 @@ class PostViewActivity : AppCompatActivity() {
         binding = ActivityPostViewBinding.inflate(layoutInflater)
         
         initContent()
+        clickBtnBack()
         setContentView(binding.root)
     }
 
@@ -24,6 +25,12 @@ class PostViewActivity : AppCompatActivity() {
             it.getStringExtra("content")?.let { content ->
                 binding.tvContent.text = content
             }
+        }
+    }
+
+    private fun clickBtnBack() {
+        binding.ibBack.setOnClickListener {
+            finish()
         }
     }
 }

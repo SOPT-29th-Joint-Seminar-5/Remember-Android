@@ -3,10 +3,34 @@ package com.sopt.remember.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.sopt.remember.R
+import com.sopt.remember.databinding.ActivityPostViewBinding
 
 class PostViewActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPostViewBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_post_view)
+        binding = ActivityPostViewBinding.inflate(layoutInflater)
+        
+        initContent()
+        clickBtnBack()
+        setContentView(binding.root)
+    }
+
+    private fun initContent() {
+        intent?.let {
+            it.getStringExtra("title")?.let { title ->
+                binding.tvTitle.text = title
+            }
+            it.getStringExtra("content")?.let { content ->
+                binding.tvContent.text = content
+            }
+        }
+    }
+
+    private fun clickBtnBack() {
+        binding.ibBack.setOnClickListener {
+            finish()
+        }
     }
 }

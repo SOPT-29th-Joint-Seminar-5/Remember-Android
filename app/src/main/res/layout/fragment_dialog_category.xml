@@ -10,36 +10,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/ellipse_fill_white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:id="@+id/tv_category_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:text="@string/tv_select_category"
-            android:textColor="@color/black"
-            android:textAppearance="@style/H1"
-            android:paddingTop="32dp"
             android:layout_marginStart="20dp"
+            android:gravity="center_vertical"
+            android:paddingTop="32dp"
+            android:text="@string/tv_select_category"
+            android:textAppearance="@style/H1"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/cl_dialog" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:paddingTop="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_category_title">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <RadioGroup
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/tv_job_community"
@@ -107,8 +110,8 @@
                         android:layout_marginVertical="4dp"
                         android:layout_marginStart="20dp"
                         android:text="@string/tv_interest_community"
-                        android:textColor="@color/gray3"
-                        android:textAppearance="@style/body3" />
+                        android:textAppearance="@style/body3"
+                        android:textColor="@color/gray3" />
 
                     <RadioButton
                         android:id="@+id/rb_interest_company"
@@ -207,7 +210,7 @@
                         android:textAppearance="@style/body1" />
                 </RadioGroup>
 
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

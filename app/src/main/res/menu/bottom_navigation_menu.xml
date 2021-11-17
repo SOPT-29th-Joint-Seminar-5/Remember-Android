@@ -11,6 +11,7 @@
         android:title="커리어" />
     <item
         android:id="@+id/menu_empty"
+        android:enabled="false"
         android:title=" "
         app:showAsAction="never" />
     <item

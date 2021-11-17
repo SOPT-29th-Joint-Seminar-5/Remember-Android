@@ -21,15 +21,15 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
 
+        initAdapter()
+        initBottomNavigation()
+
         binding.fabPost.bringToFront()
         binding.fabPost.setOnClickListener {
             val intent = Intent(this@HomeActivity, PostWriteActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up)
         }
-
-        initAdapter()
-        initBottomNavigation()
 
         setContentView(binding.root)
 
@@ -45,11 +45,19 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun initBottomNavigation() {
+
         binding.vpHome.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 binding.bnv.menu.getItem(position).isChecked = true
             }
         })
+
+        // 커뮤니티 디폴트로 설정
+        binding.vpHome.setCurrentItem(2)
+        binding.bnv.menu.getItem(3).isChecked = true
+
+        binding.bnv.menu.getItem(2).isEnabled = false
+        binding.bnv.menu.getItem(2).isCheckable = false
 
         binding.bnv.setOnItemSelectedListener {
             when(it.itemId) {
@@ -76,7 +84,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         // 스와이프 안되게
-        binding.vpHome.isUserInputEnabled = false
+        //binding.vpHome.isUserInputEnabled = false
     }
 
     companion object {

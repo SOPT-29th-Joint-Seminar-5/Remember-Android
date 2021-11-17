@@ -18,6 +18,12 @@ class PostWriteActivity : AppCompatActivity() {
         clickBtnCategory()
         clickBtnPosting()
         setContentView(binding.root)
+
+        binding.btCancel.setOnClickListener {
+            finish()
+            // 이렇게 하면 finish()라서 안예쁨
+            //overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_down)
+        }
     }
 
     private fun clickBtnPosting() {

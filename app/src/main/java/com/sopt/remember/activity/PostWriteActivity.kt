@@ -74,6 +74,7 @@ class PostWriteActivity : AppCompatActivity() {
             val content = binding.etContent.text
             if (title.isNotEmpty() && content.isNotEmpty() && category != null) {
                 startPostViewActivity(title.toString(), content.toString())
+                finish()
             }
         }
     }

@@ -95,9 +95,6 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         }
-
-        // 스와이프 안되게
-        //binding.vpHome.isUserInputEnabled = false
     }
 
     companion object {

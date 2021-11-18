@@ -46,16 +46,17 @@ class CommunityFragment : Fragment() {
 
         bestPostAdapter.bestPostList.addAll(
             listOf(
-                BestPostData("우리 모두","카테1",243, 53),
-                BestPostData("고생 많았다~~!!","카테2",243, 53),
-                BestPostData("남은 서버도","카테3",243, 53),
-                BestPostData("홧팅!!!!","카테4",243, 53),
-                BestPostData("내일 할일","카테4",243, 53),
-                BestPostData("아이템 데코레이션-회색 라인","카테4",243, 53),
-                BestPostData("번호 123은 주황색, 나머지는 회색...","카테4",243, 53),
-                BestPostData("번호만 따로 관리하는법 없나...?","도와주면 착한사람..",243, 53),
+                BestPostData(1,"우리 모두","카테1",243, 53),
+                BestPostData(2,"고생 많았다~~!!","카테2",243, 53),
+                BestPostData(3,"남은 서버도","카테3",243, 53),
+                BestPostData(4,"홧팅!!!!","카테4",243, 53),
+                BestPostData(5,"내일 할일","카테4",243, 53),
+                BestPostData(6,"아이템 데코레이션-회색 라인","카테4",243, 53),
+                BestPostData(7,"번호 123은 주황색, 나머지는 회색...","카테4",243, 53),
+                BestPostData(8,"번호만 따로 관리하는법 없나...?","도와주면 착한사람..",243, 53),
             )
         )
+
         bestPostAdapter.notifyDataSetChanged()
     }
 

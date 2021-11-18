@@ -52,7 +52,6 @@
     <!-- Text custom -->
     <style name="H1" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">@res/roboto_bold</item>
     </style>
 
@@ -95,5 +94,10 @@
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
         <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
         <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="RbColor">
+        <item name="colorAccent">@color/gray4</item>
+        <item name="colorControlNormal">@color/gray4</item>
     </style>
 </resources>

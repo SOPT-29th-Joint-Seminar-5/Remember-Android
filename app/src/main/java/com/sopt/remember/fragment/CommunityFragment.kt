@@ -1,12 +1,13 @@
 package com.sopt.remember.fragment
 
+import android.graphics.drawable.ClipDrawable.HORIZONTAL
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.sopt.remember.R
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.sopt.remember.databinding.FragmentCommunityBinding
 import com.sopt.remember.util.BestPostAdapter
 import com.sopt.remember.util.BestPostData
@@ -24,9 +25,17 @@ class CommunityFragment : Fragment() {
         _binding = FragmentCommunityBinding.inflate(layoutInflater, container, false)
 
         initAdapter()
+        addDivider()
 
         return binding.root
     }
+
+    private fun addDivider() {
+        binding.rvBestPost.addItemDecoration(
+            DividerItemDecoration(binding.rvBestPost.context, HORIZONTAL)
+        )
+    }
+
 
     private fun initAdapter() {
 

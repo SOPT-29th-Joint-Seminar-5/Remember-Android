@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
+import androidx.fragment.app.DialogFragment
 import com.sopt.remember.R
 import com.sopt.remember.databinding.ActivityPostWriteBinding
 import com.sopt.remember.fragment.CategoryDialogFragment
@@ -89,12 +91,16 @@ class PostWriteActivity : AppCompatActivity() {
 
     private fun clickBtnCategory() {
         binding.clSelectCategory.setOnClickListener {
+            // 상단 회색 부분을 클릭했을때 작동
+            // Log.d("ClickBtnCategory", "CheckTiming")
             val bottomSheet = CategoryDialogFragment {
                 category = it
                 category?.let {
                     binding.tvSelectCategory.setText(category!!)
                 }
                 changePostingColor()
+                // 세부 카테고리를 선택했을때 작동
+                // Log.d("ClickBtnCategory", "CheckRadioButton?")
             }
             bottomSheet.show(supportFragmentManager, bottomSheet.tag)
         }

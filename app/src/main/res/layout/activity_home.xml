@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.HomeActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_home"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/line_shadow_reverse"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/line_shadow_reverse"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/line_shadow_reverse"
+        app:layout_constraintBottom_toTopOf="@+id/bnv"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemTextAppearanceInactive="@style/Caption"
+        app:itemTextAppearanceActive="@style/Caption"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_navigation_menu"
+        app:itemIconTint="@color/selector_bottom_navigation"
+        app:itemRippleColor="@color/gray1"
+        app:itemTextColor="@color/selector_bottom_navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vp_home"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/main1"
+        android:src="@drawable/ic_post"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="fab_post"
+        app:tint="@color/white"
+        app:borderWidth="0dp"
+        app:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

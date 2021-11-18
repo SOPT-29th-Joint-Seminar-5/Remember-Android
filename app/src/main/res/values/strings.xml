@@ -1,3 +1,42 @@
 <resources>
     <string name="app_name">Remember</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="tv_post_write">게시글 쓰기</string>
+    <string name="tv_select_category">커뮤니티를 선택해 주세요</string>
+
+    <string name="tv_job_community">직무커뮤니티</string>
+    <string name="tv_interest_community">관심사커뮤니티</string>
+    <string name="rb_job_designer">디자이너</string>
+    <string name="rb_job_marketing">마케팅/PR/제휴</string>
+    <string name="rb_job_IT">IT 기획/개발/디자인</string>
+    <string name="rb_job_growup">좋은 기획자로 성장하기</string>
+    <string name="rb_interest_company">회사생활</string>
+    <string name="rb_interest_discussion">모두의 토론</string>
+    <string name="rb_interest_economy">경제/재테크</string>
+    <string name="rb_interest_hobby">취미/여행/운동</string>
+    <string name="rb_interest_career">이직/연봉/커리어</string>
+    <string name="rb_interest_retire">은퇴 라이프</string>
+    <string name="rb_interest_global">글로벌 회사 근무자</string>
+    <string name="rb_interest_employee1">팀장 라이프</string>
+    <string name="rb_interest_employee2">사원 라이프</string>
+    <string name="rb_interest_employee3">대리 라이프</string>
+    <string name="rb_interest_wine">와인과 맥주</string>
+    <string name="rb_interest_fame">명예의 전당</string>
+
+    <string name="tv_posting">등록</string>
+    <string name="et_title">제목을 입력하세요</string>
+    <string name="et_content">내용을 입력하세요</string>
+    <string name="tv_posting_nickname">닉네임으로 등록</string>
+
+    <string name="tv_job_talk">직무톡</string>
+    <string name="tv_interest_talk">관심사톡</string>
+    <string name="tv_nickname">닉네임</string>
+    <string name="tv_part">웹 ⦁ 앱 디자인</string>
+    <string name="tv_upload_time">방금 전</string>
+    <string name="tv_hits">조회 0</string>
+    <string name="tv_likes">좋아요 0</string>
+    <string name="tv_comments">댓글 0</string>
+    <string name="et_comment">닉네임님 생각은 어떠세요?</string>
 </resources>

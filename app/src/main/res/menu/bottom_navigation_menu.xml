@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_bussinesscard"
+        android:icon="@drawable/ic_businesscard"
+        android:title="명함첩" />
+    <item
+        android:id="@+id/menu_career"
+        android:icon="@drawable/ic_career"
+        android:title="커리어" />
+    <item
+        android:id="@+id/menu_empty"
+        android:enabled="false"
+        android:title=" "
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_community"
+        android:icon="@drawable/ic_community"
+        android:title="커뮤니티" />
+    <item
+        android:id="@+id/menu_mypage"
+        android:icon="@drawable/ic_mypage"
+        android:title="마이페이지" />
+</menu>

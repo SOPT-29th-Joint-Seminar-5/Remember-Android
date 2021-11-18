@@ -48,7 +48,7 @@
         android:contentDescription="fab_post"
         app:tint="@color/white"
         app:borderWidth="0dp"
-        app:elevation="16dp"
+        app:elevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -11,11 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif"
         android:gravity="center_horizontal"
+        android:includeFontPadding="false"
+        android:textAppearance="@style/H1"
         android:textColor="@color/gray3"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="1" />
@@ -25,13 +24,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="21dp"
-        android:fontFamily="sans-serif"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="49dp"
+        android:fontFamily="@font/noto_sans_kr_medium"
+        android:includeFontPadding="false"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_post_num"
         tools:text="후배가 내 파트장이 된다면???" />
 
     <TextView
@@ -40,10 +41,10 @@
         android:layout_height="match_parent"
         android:layout_marginStart="36dp"
         android:layout_marginTop="53dp"
-        android:fontFamily="sans-serif"
-        android:textColor="@color/gray4"
-        android:textSize="16sp"
-        android:textStyle="normal"
+        android:layout_marginBottom="17dp"
+        android:includeFontPadding="false"
+        android:textAppearance="@style/body1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="회사생활" />
@@ -65,7 +66,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="19dp"
-        android:textSize="12sp"
+        android:includeFontPadding="false"
+        android:textAppearance="@style/body3"
+        android:textColor="@color/gray3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="564" />
@@ -74,11 +77,13 @@
     <ImageView
         android:layout_width="16dp"
         android:layout_height="16dp"
+        android:layout_marginTop="54dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="18dp"
         android:src="@drawable/ic_comment"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_comment_num"
@@ -86,8 +91,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="20dp"
+        android:includeFontPadding="false"
+        android:textAppearance="@style/body3"
         android:textColor="@color/main1"
-        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="80" />

@@ -7,7 +7,7 @@
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondary">@color/black</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
@@ -15,7 +15,6 @@
         <!-- status bar text color -->
         <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
-
         <!-- Font -->
 <!--        <item name="android:textViewStyle">@style/TextViewStyle</item>-->
 <!--        <item name="android:buttonStyle">@style/ButtonStyle</item>-->
@@ -52,37 +51,55 @@
     <!-- Text custom -->
     <style name="H1" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textSize">18sp</item>
-        <item name="android:fontFamily">@res/roboto_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/noto_sans_kr_bold</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="H2" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textSize">18sp</item>
-        <item name="android:fontFamily">@res/roboto_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/noto_sans_kr_regular</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="H3" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textSize">14sp</item>
-        <item name="android:fontFamily">@res/roboto_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/noto_sans_kr_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="H4" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/noto_sans_kr_medium</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="body1" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textSize">16sp</item>
-        <item name="android:fontFamily">@res/roboto_regular</item>
+        <item name="android:fontFamily">@font/noto_sans_kr_regular</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="body2" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textSize">14sp</item>
-        <item name="android:fontFamily">@res/roboto_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/noto_sans_kr_regular</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="body3" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@res/roboto_regular</item>
+        <item name="android:fontFamily">@font/noto_sans_kr_regular</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="Caption" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textSize">8sp</item>
-        <item name="android:fontFamily">@res/roboto_regular</item>
+        <item name="android:fontFamily">@font/noto_sans_kr_regular</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="NewDialog">

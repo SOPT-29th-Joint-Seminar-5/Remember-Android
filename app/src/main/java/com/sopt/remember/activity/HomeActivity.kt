@@ -53,7 +53,7 @@ class HomeActivity : AppCompatActivity() {
         })
 
         // 커뮤니티 디폴트로 설정
-        binding.vpHome.setCurrentItem(2)
+        binding.vpHome.currentItem = 2
         binding.bnv.menu.getItem(3).isChecked = true
 
         binding.bnv.menu.getItem(2).isEnabled = false

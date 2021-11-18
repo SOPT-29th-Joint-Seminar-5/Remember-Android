@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ellipse_fill_white"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/tv_category_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/tv_select_category"
+        android:textAppearance="@style/H1"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cl_dialog" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="71dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_category_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="14dp">
+
+            <RadioGroup
+                android:id="@+id/rg_category"
+                android:theme="@style/RbColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_job_community"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/tv_job_community"
+                    android:textAppearance="@style/body3"
+                    android:textColor="@color/gray3" />
+
+                <RadioButton
+                    android:id="@+id/rb_job_designer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:text="@string/rb_job_designer"
+                    android:textAppearance="@style/body1"/>
+
+                <RadioButton
+                    android:id="@+id/rb_job_marketing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_job_marketing"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_job_IT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_job_IT"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_job_growup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_job_growup"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/gray2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_interest_community"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/tv_interest_community"
+                    android:textAppearance="@style/body3"
+                    android:textColor="@color/gray3" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_interest_company"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest_discussion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_interest_discussion"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest_economy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_interest_economy"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest_hobby"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_interest_hobby"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest_career"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_interest_career"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest_retire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_interest_retire"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest_global"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_interest_global"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest_employee1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_interest_employee1"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest_employee2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_interest_employee2"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest_employee3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_interest_employee3"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest_wine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_interest_wine"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest_fame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_interest_fame"
+                    android:paddingStart="8dp"
+                    android:textAppearance="@style/body1" />
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

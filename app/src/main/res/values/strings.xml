@@ -25,6 +25,7 @@
     <string name="rb_interest_wine">\t와인과 맥주</string>
     <string name="rb_interest_fame">\t명예의 전당</string>
 
+    <string name="tv_posting">등록</string>
     <string name="et_title">제목을 입력하세요</string>
     <string name="et_content">내용을 입력하세요</string>
     <string name="tv_posting_nickname">닉네임으로 등록</string>

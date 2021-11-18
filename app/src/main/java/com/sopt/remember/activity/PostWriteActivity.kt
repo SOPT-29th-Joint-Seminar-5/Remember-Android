@@ -3,7 +3,8 @@ package com.sopt.remember.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.android.material.bottomsheet.BottomSheetBehavior
+import android.text.Editable
+import android.text.TextWatcher
 import com.sopt.remember.R
 import com.sopt.remember.databinding.ActivityPostWriteBinding
 import com.sopt.remember.fragment.CategoryDialog
@@ -15,19 +16,60 @@ class PostWriteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPostWriteBinding.inflate(layoutInflater)
 
+        checkEtTitle()
+        checkEtContent()
         clickBtnCategory()
         clickBtnPosting()
-        setContentView(binding.root)
+        clickBtnCancel()
 
+        setContentView(binding.root)
+    }
+
+    private fun checkEtTitle() {
+        binding.etTitle.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (binding.etTitle.text.isNotEmpty() && binding.etContent.text.isNotEmpty()) {
+                    binding.tvPosting.setTextColor(getColor(R.color.black))
+                } else {
+                    binding.tvPosting.setTextColor(getColor(R.color.gray2))
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+        })
+    }
+
+    private fun checkEtContent()  {
+        binding.etContent.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (binding.etTitle.text.isNotEmpty() && binding.etContent.text.isNotEmpty()) {
+                    binding.tvPosting.setTextColor(getColor(R.color.black))
+                } else {
+                    binding.tvPosting.setTextColor(getColor(R.color.gray2))
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+        })
+    }
+
+    private fun clickBtnCancel() {
         binding.btCancel.setOnClickListener {
             finish()
-            // 이렇게 하면 finish()라서 안예쁨
-            //overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_down)
+            overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_down)
         }
     }
 
     private fun clickBtnPosting() {
-        binding.btPosting.setOnClickListener {
+        binding.clPosting.setOnClickListener {
             val title = binding.etTitle.text.toString()
             val content = binding.etContent.text.toString()
             if (title.isNotEmpty() && content.isNotEmpty()) {

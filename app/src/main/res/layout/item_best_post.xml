@@ -6,7 +6,6 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:text="1"
         android:id="@+id/tv_post_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,7 +13,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif"
         android:gravity="center_horizontal"
-        android:textColor="@color/main1"
+        android:textColor="@color/gray3"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

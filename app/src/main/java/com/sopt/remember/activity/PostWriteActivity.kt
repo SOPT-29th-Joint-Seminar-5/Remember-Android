@@ -5,10 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.Toast
 import com.sopt.remember.R
 import com.sopt.remember.databinding.ActivityPostWriteBinding
-import com.sopt.remember.fragment.CategoryDialog
+import com.sopt.remember.fragment.CategoryDialogFragment
 
 class PostWriteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPostWriteBinding
@@ -89,7 +88,7 @@ class PostWriteActivity : AppCompatActivity() {
 
     private fun clickBtnCategory() {
         binding.clSelectCategory.setOnClickListener {
-            val bottomSheet = CategoryDialog {
+            val bottomSheet = CategoryDialogFragment {
                 category = it
                 category?.let {
                     binding.tvSelectCategory.setText(category!!)

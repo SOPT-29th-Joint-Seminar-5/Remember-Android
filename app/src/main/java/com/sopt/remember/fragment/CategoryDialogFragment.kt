@@ -13,7 +13,7 @@ import com.sopt.remember.R
 import com.sopt.remember.databinding.FragmentDialogCategoryBinding
 import kotlin.properties.Delegates
 
-class CategoryDialog(val itemClick: (Int) -> Unit): BottomSheetDialogFragment() {
+class CategoryDialogFragment(val itemClick: (Int) -> Unit): BottomSheetDialogFragment() {
     private var _binding: FragmentDialogCategoryBinding? = null
     private val binding get() = _binding!!
     var category: Int? = null
@@ -32,14 +32,6 @@ class CategoryDialog(val itemClick: (Int) -> Unit): BottomSheetDialogFragment() 
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         return binding.root
-    }
-
-    companion object {
-        fun newInstance(
-            itemClick: (Int) -> Unit
-        ): CategoryDialog {
-            return CategoryDialog(itemClick)
-        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

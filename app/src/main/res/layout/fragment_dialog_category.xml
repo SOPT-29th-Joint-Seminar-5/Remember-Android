@@ -37,6 +37,7 @@
             android:orientation="vertical">
 
             <RadioGroup
+                android:theme="@style/RbColor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -53,6 +54,7 @@
 
                 <RadioButton
                     android:id="@+id/rb_job_designer"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_job_designer"

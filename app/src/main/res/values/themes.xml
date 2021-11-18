@@ -95,4 +95,9 @@
         <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
         <item name="android:background">@android:color/transparent</item>
     </style>
+
+    <style name="RbColor">
+        <item name="colorAccent">@color/gray4</item>
+        <item name="colorControlNormal">@color/gray4</item>
+    </style>
 </resources>

@@ -6,11 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.toColor
-import com.sopt.remember.R
 import com.sopt.remember.databinding.FragmentCommunityBinding
-import com.sopt.remember.databinding.ItemBestPostBinding
-import com.sopt.remember.util.BestPostAdapter
+import com.sopt.remember.adapter.BestPostAdapter
 import com.sopt.remember.util.BestPostData
 
 class CommunityFragment : Fragment() {

@@ -1,15 +1,12 @@
-package com.sopt.remember.util
+package com.sopt.remember.adapter
 
-import android.annotation.SuppressLint
-import android.graphics.Color
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.sopt.remember.R
 import com.sopt.remember.databinding.ItemBestPostBinding
+import com.sopt.remember.util.BestPostData
 
 class BestPostAdapter : RecyclerView.Adapter<BestPostAdapter.BestPostViewHolder>() {
     val bestPostList = mutableListOf<BestPostData>()

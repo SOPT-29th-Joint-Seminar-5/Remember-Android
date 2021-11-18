@@ -33,10 +33,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="14dp"
-            android:orientation="vertical">
+            android:layout_marginHorizontal="14dp">
 
             <RadioGroup
+                android:id="@+id/rg_category"
                 android:theme="@style/RbColor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -45,7 +45,7 @@
                     android:id="@+id/tv_job_community"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
+                    android:layout_marginStart="6dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:text="@string/tv_job_community"
@@ -54,17 +54,18 @@
 
                 <RadioButton
                     android:id="@+id/rb_job_designer"
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
                     android:text="@string/rb_job_designer"
-                    android:textAppearance="@style/body1" />
+                    android:textAppearance="@style/body1"/>
 
                 <RadioButton
                     android:id="@+id/rb_job_marketing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_job_marketing"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -72,6 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_job_IT"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -79,6 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_job_growup"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -100,7 +103,7 @@
                     android:id="@+id/tv_interest_community"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
+                    android:layout_marginStart="6dp"
                     android:text="@string/tv_interest_community"
                     android:textAppearance="@style/body3"
                     android:textColor="@color/gray3" />
@@ -110,6 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_interest_company"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -117,6 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_interest_discussion"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -124,6 +129,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_interest_economy"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -131,6 +137,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_interest_hobby"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -138,6 +145,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_interest_career"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -145,6 +153,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_interest_retire"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -152,6 +161,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_interest_global"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -159,6 +169,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_interest_employee1"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -166,6 +177,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_interest_employee2"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -173,6 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_interest_employee3"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -180,6 +193,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_interest_wine"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
 
                 <RadioButton
@@ -187,6 +201,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rb_interest_fame"
+                    android:paddingStart="8dp"
                     android:textAppearance="@style/body1" />
             </RadioGroup>
 

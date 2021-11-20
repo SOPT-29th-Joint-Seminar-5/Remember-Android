@@ -17,7 +17,7 @@ class BestPostAdapter : RecyclerView.Adapter<BestPostAdapter.BestPostViewHolder>
     class BestPostViewHolder(private val binding: ItemBestPostBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: BestPostData, position: Int) {
-            binding.tvPostNum.text = data.post_num.toString()
+            binding.tvPostNum.text = (position + 1).toString()
             binding.tvTitle.text = data.title
             binding.tvCategory.text = data.category
             binding.tvLikeNum.text = data.like_num.toString()

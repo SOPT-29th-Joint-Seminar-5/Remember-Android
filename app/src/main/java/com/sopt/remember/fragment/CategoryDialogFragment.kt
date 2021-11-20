@@ -4,9 +4,11 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.sopt.remember.R
@@ -30,6 +32,7 @@ class CategoryDialogFragment(val itemClick: (Int) -> Unit): BottomSheetDialogFra
         _binding = FragmentDialogCategoryBinding.inflate(layoutInflater, container, false)
 
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog?.setCanceledOnTouchOutside(true)    // 바깥 영역 터치시 다이얼로그 종료
 
         return binding.root
     }
@@ -43,6 +46,7 @@ class CategoryDialogFragment(val itemClick: (Int) -> Unit): BottomSheetDialogFra
     }
 
     private fun selectCategory(checkedId: Int): Int {
+        dialog?.cancel()      // category 선택시 dialog 종료
         return when (checkedId) {
             R.id.rb_job_designer -> R.string.rb_job_designer
             R.id.rb_job_marketing -> R.string.rb_job_marketing

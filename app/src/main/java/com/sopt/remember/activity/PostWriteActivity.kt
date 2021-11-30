@@ -7,7 +7,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
-import androidx.fragment.app.DialogFragment
 import com.sopt.remember.R
 import com.sopt.remember.databinding.ActivityPostWriteBinding
 import com.sopt.remember.fragment.CategoryDialogFragment
@@ -82,7 +81,7 @@ class PostWriteActivity : AppCompatActivity() {
         )
 
         val call: Call<ResponsePostWriteData> =
-            PostWriteServiceCreator.postWriteService.postWrite(requestPostWriteData)
+            PostServiceCreator.postService.postWrite(requestPostWriteData)
 
         call.enqueue(object: Callback<ResponsePostWriteData> {
             override fun onResponse(
@@ -91,9 +90,10 @@ class PostWriteActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     val data = response.body()?.data
-                    //Log.d("postwrite_content", data!!.post.contents)
-                    startActivity(Intent(this@PostWriteActivity, PostViewActivity::class.java))
-                    finish()
+                    Log.d("postwrite_content", data!!.post.contents)
+                    startPostViewActivity(data!!.post.id)
+//                    startActivity(Intent(this@PostWriteActivity, PostViewActivity::class.java))
+//                    finish()
                 }
             }
 
@@ -103,12 +103,11 @@ class PostWriteActivity : AppCompatActivity() {
         })
     }
 
-    private fun startPostViewActivity(title: String, content: String) {
+    private fun startPostViewActivity(id: Int) {
         val intent = Intent(this@PostWriteActivity, PostViewActivity::class.java)
-        intent.putExtra("title", title)
-        intent.putExtra("content", content)
-        intent.putExtra("category", category)
+        intent.putExtra("id", id)
         startActivity(intent)
+        finish()
     }
 
     private fun clickBtnCategory() {

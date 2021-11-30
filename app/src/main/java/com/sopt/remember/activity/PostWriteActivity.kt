@@ -7,6 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
+import android.widget.Toast
 import com.sopt.remember.R
 import com.sopt.remember.databinding.ActivityPostWriteBinding
 import com.sopt.remember.fragment.CategoryDialogFragment
@@ -90,10 +91,13 @@ class PostWriteActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     val data = response.body()?.data
-                    Log.d("postwrite_content", data!!.post.contents)
+                    //Log.d("postwrite_content", data!!.post.contents)
                     startPostViewActivity(data!!.post.id)
 //                    startActivity(Intent(this@PostWriteActivity, PostViewActivity::class.java))
 //                    finish()
+                }
+                else {
+                    Toast.makeText(this@PostWriteActivity, "response error", Toast.LENGTH_SHORT).show()
                 }
             }
 

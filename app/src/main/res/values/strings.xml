@@ -35,8 +35,8 @@
     <string name="tv_nickname">닉네임</string>
     <string name="tv_part">웹 ⦁ 앱 디자인</string>
     <string name="tv_upload_time">방금 전</string>
-    <string name="tv_hits">조회 0</string>
-    <string name="tv_likes">좋아요 0</string>
-    <string name="tv_comments">댓글 0</string>
+    <string name="tv_hits">조회</string>
+    <string name="tv_likes">좋아요</string>
+    <string name="tv_comments">댓글</string>
     <string name="et_comment">닉네임님 생각은 어떠세요?</string>
 </resources>

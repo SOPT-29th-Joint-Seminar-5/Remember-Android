@@ -186,7 +186,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="78dp"
+                android:layout_marginEnd="85dp"
                 android:layout_marginBottom="16dp"
                 android:includeFontPadding="false"
                 android:text="@string/tv_hits"
@@ -197,15 +197,40 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_content" />
 
             <TextView
+                android:id="@+id/tv_hits_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="5dp"
+                android:includeFontPadding="false"
+                android:textAppearance="@style/body2"
+                android:textColor="@color/gray3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_hits"
+                app:layout_constraintTop_toBottomOf="@id/tv_content" />
+
+            <TextView
                 android:id="@+id/tv_likes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="12dp"
                 android:includeFontPadding="false"
                 android:text="@string/tv_likes"
                 android:textAppearance="@style/body2"
                 android:textColor="@color/gray3"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_hits_cnt"
+                app:layout_constraintTop_toTopOf="@id/tv_hits" />
+
+            <TextView
+                android:id="@+id/tv_likes_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:includeFontPadding="false"
+                android:textAppearance="@style/body2"
+                android:textColor="@color/gray3"
+                app:layout_constraintStart_toEndOf="@id/tv_likes"
                 app:layout_constraintTop_toTopOf="@id/tv_hits" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -235,13 +260,25 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <TextView
+                    android:id="@+id/tv_comments_cnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="16dp"
+                    android:layout_marginStart="4dp"
+                    android:includeFontPadding="false"
+                    android:textAppearance="@style/H3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_comments_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/ic_chevron_right"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/tv_comments_view"
+                    app:layout_constraintStart_toEndOf="@id/tv_comments_cnt"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

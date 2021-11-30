@@ -1,6 +1,7 @@
 package com.sopt.remember.activity
 
 import com.sopt.remember.util.RequestPostWriteData
+import com.sopt.remember.util.ResponsePostViewData
 import com.sopt.remember.util.ResponsePostWriteData
 import retrofit2.Call
 import retrofit2.http.Body
@@ -15,7 +16,7 @@ interface PostService {
     ) : Call<ResponsePostWriteData>
 
     @GET("post/{id}")
-    fun getId(
+    fun getPostData(
         @Path("id") id : Int
-    )
+    ) : Call<ResponsePostViewData>
 }

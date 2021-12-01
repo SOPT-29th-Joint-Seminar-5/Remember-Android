@@ -31,7 +31,7 @@ class PostViewActivity : AppCompatActivity() {
                 id = postId
             }
         }
-        val call: Call<ResponsePostViewData> = PostServiceCreator.postService.getPostData(id)
+        val call: Call<ResponsePostViewData> = ServiceCreator.postService.getPostData(id)
 
         call.enqueue(object: Callback<ResponsePostViewData> {
             override fun onResponse(

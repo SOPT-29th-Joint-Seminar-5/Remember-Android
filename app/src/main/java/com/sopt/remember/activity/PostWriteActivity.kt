@@ -82,7 +82,7 @@ class PostWriteActivity : AppCompatActivity() {
         )
 
         val call: Call<ResponsePostWriteData> =
-            PostServiceCreator.postService.postWrite(requestPostWriteData)
+            ServiceCreator.postService.postWrite(requestPostWriteData)
 
         call.enqueue(object: Callback<ResponsePostWriteData> {
             override fun onResponse(

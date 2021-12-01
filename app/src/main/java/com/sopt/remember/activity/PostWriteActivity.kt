@@ -6,10 +6,16 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import androidx.fragment.app.DialogFragment
+import android.widget.EditText
+import android.widget.Toast
 import com.sopt.remember.R
 import com.sopt.remember.databinding.ActivityPostWriteBinding
 import com.sopt.remember.fragment.CategoryDialogFragment
+import com.sopt.remember.util.RequestPostWriteData
+import com.sopt.remember.util.ResponsePostWriteData
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class PostWriteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPostWriteBinding
@@ -20,29 +26,15 @@ class PostWriteActivity : AppCompatActivity() {
         binding = ActivityPostWriteBinding.inflate(layoutInflater)
 
         clickBtnCategory()
-        checkEtTitle()
-        checkEtContent()
+        checkEmptyText(binding.etTitle)
+        checkEmptyText(binding.etContent)
         clickBtnPosting()
         clickBtnCancel()
         setContentView(binding.root)
     }
 
-    private fun checkEtTitle() {
-        binding.etTitle.addTextChangedListener(object: TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                changePostingColor()
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-            }
-        })
-    }
-
-    private fun checkEtContent()  {
-        binding.etContent.addTextChangedListener(object: TextWatcher {
+    private fun checkEmptyText(et: EditText) {
+        et.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
@@ -75,18 +67,51 @@ class PostWriteActivity : AppCompatActivity() {
             val title = binding.etTitle.text
             val content = binding.etContent.text
             if (title.isNotEmpty() && content.isNotEmpty() && category != null) {
-                startPostViewActivity(title.toString(), content.toString())
-                finish()
+//                startPostViewActivity(title.toString(), content.toString())
+//                finish()
+                initNetwork()
             }
         }
     }
 
-    private fun startPostViewActivity(title: String, content: String) {
+    private fun initNetwork() {
+        val requestPostWriteData = RequestPostWriteData(
+            tagName = binding.tvSelectCategory.text.toString(),
+            subject = binding.etTitle.text.toString(),
+            contents = binding.etContent.text.toString()
+        )
+
+        val call: Call<ResponsePostWriteData> =
+            PostServiceCreator.postService.postWrite(requestPostWriteData)
+
+        call.enqueue(object: Callback<ResponsePostWriteData> {
+            override fun onResponse(
+                call: Call<ResponsePostWriteData>,
+                response: Response<ResponsePostWriteData>
+            ) {
+                if (response.isSuccessful) {
+                    val data = response.body()?.data
+                    //Log.d("postwrite_content", data!!.post.contents)
+                    startPostViewActivity(data!!.post.id)
+//                    startActivity(Intent(this@PostWriteActivity, PostViewActivity::class.java))
+//                    finish()
+                }
+                else {
+                    Toast.makeText(this@PostWriteActivity, "response error", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ResponsePostWriteData>, t: Throwable) {
+                Log.e("PostWriteActivityNetwork", "error:$t")
+            }
+        })
+    }
+
+    private fun startPostViewActivity(id: Int) {
         val intent = Intent(this@PostWriteActivity, PostViewActivity::class.java)
-        intent.putExtra("title", title)
-        intent.putExtra("content", content)
-        intent.putExtra("category", category)
+        intent.putExtra("id", id)
         startActivity(intent)
+        finish()
     }
 
     private fun clickBtnCategory() {
@@ -100,7 +125,7 @@ class PostWriteActivity : AppCompatActivity() {
                 }
                 changePostingColor()
                 // 세부 카테고리를 선택했을때 작동
-                // Log.d("ClickBtnCategory", "CheckRadioButton?")
+                //                // Log.d("ClickBtnCategory", "CheckRadioButton?")
             }
             bottomSheet.show(supportFragmentManager, bottomSheet.tag)
         }

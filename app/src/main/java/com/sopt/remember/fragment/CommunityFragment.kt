@@ -6,11 +6,19 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.sopt.remember.databinding.FragmentCommunityBinding
 import com.sopt.remember.adapter.BestPostAdapter
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.bumptech.glide.Glide
+import com.sopt.remember.activity.ServiceCreator
 import com.sopt.remember.util.BestPostData
+import com.sopt.remember.util.ResponseMainViewData
+import com.sopt.remember.util.ResponsePostViewData
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class CommunityFragment : Fragment() {
     private var _binding: FragmentCommunityBinding? = null
@@ -24,7 +32,7 @@ class CommunityFragment : Fragment() {
     ): View? {
         _binding = FragmentCommunityBinding.inflate(layoutInflater, container, false)
 
-        initAdapter()
+        initNetwork()
         addDivider()
 
         return binding.root
@@ -36,28 +44,50 @@ class CommunityFragment : Fragment() {
         )
     }
 
+    private fun initNetwork() {
+        val call: Call<ResponseMainViewData> = ServiceCreator.mainViewService.getData()
 
-    private fun initAdapter() {
+        call.enqueue(object: Callback<ResponseMainViewData> {
+            override fun onResponse(
+                call: Call<ResponseMainViewData>,
+                response: Response<ResponseMainViewData>
+            ) {
+                if (response.isSuccessful) {
+                    val data = response.body()?.data
+                    initAdapter(data?.mainList)
+                    if (data != null) {
+                        initImage(data)
+                    }
+                } else {
+                    Toast.makeText(requireActivity(), "response error", Toast.LENGTH_SHORT).show()
+                }
+            }
 
+            override fun onFailure(call: Call<ResponseMainViewData>, t: Throwable) {
+                Log.e("CommunityFragmentNetwork", "error:$t")
+            }
+        })
+    }
+
+    private fun initAdapter(data: List<ResponseMainViewData.Data.MainList>?) {
         Log.d("CommunityFragment", "initAdapter")
 
         bestPostAdapter = BestPostAdapter()
         binding.rvBestPost.adapter = bestPostAdapter
 
-        bestPostAdapter.bestPostList.addAll(
-            listOf(
-                BestPostData("우리 모두","카테1",243, 53),
-                BestPostData("고생 많았다~~!!","카테2",243, 53),
-                BestPostData("남은 서버도","카테3",243, 53),
-                BestPostData("홧팅!!!!","카테4",243, 53),
-                BestPostData("내일 할일","카테4",243, 53),
-                BestPostData("아이템 데코레이션-회색 라인","카테4",243, 53),
-                BestPostData("번호 123은 주황색, 나머지는 회색...","카테4",243, 53),
-                BestPostData("번호만 따로 관리하는법 없나...?","도와주면 착한사람..",243, 53),
+        if (data != null) {
+            bestPostAdapter.bestPostList.addAll(
+                data.map{ BestPostData(it.subject, it.tagName, it.likeCnt, it.commentCnt) }
             )
-        )
+        }
 
         bestPostAdapter.notifyDataSetChanged()
+    }
+
+    private fun initImage(data: ResponseMainViewData.Data) {
+        Glide.with(this)
+            .load(data.image)
+            .into(binding.banner1)
     }
 
     override fun onDestroyView() {

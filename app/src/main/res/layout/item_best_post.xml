@@ -21,9 +21,9 @@
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginStart="36dp"
+        android:layout_marginLeft="11dp"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="49dp"
         android:fontFamily="@font/noto_sans_kr_medium"
@@ -31,7 +31,7 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_post_num"
         app:layout_constraintTop_toTopOf="@id/tv_post_num"
         tools:text="후배가 내 파트장이 된다면???" />
 
@@ -50,7 +50,7 @@
         tools:text="회사생활" />
 
     <ImageView
-        android:layout_width="15.7dp"
+        android:layout_width="16dp"
         android:layout_height="16dp"
         android:layout_marginTop="54dp"
         android:layout_marginEnd="99dp"

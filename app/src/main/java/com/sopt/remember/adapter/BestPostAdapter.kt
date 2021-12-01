@@ -25,6 +25,11 @@ class BestPostAdapter : RecyclerView.Adapter<BestPostAdapter.BestPostViewHolder>
                     ContextCompat.getColor(itemView.context, R.color.main1)
                 )
             }
+            else {
+                binding.tvPostNum.setTextColor(
+                    ContextCompat.getColor(itemView.context, R.color.gray3)
+                )
+            }
         }
     }
 

@@ -17,8 +17,7 @@ class PostViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPostViewBinding.inflate(layoutInflater)
-        
-//        initContent()
+
         initPostNetwork()
         clickBtnBack()
         setContentView(binding.root)
@@ -41,12 +40,14 @@ class PostViewActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val data = response.body()?.data?.exist
                     binding.tvTitle.text = data!!.subject
-                    binding.tvNickname.text = data.nickname
                     binding.tvContent.text = data.contents
+                    setNickname(data.nickname, data.duty)
                     setCategory(data.tagName)
+                    setHitsCount(data.likeCnt, data.commentCnt)
                     binding.tvLikesCnt.text = data.likeCnt.toString()
-                    binding.tvHitsCnt.text = data.likeCnt.toString()    // hitsCnt nowhere
+                    binding.tvLikesCnt2.text = data.likeCnt.toString()
                     binding.tvCommentsCnt.text = data.commentCnt.toString()
+                    binding.tvCommentsCnt2.text = data.commentCnt.toString()
                 } else {
                     Toast.makeText(this@PostViewActivity, "response error", Toast.LENGTH_SHORT).show()
                 }
@@ -59,6 +60,18 @@ class PostViewActivity : AppCompatActivity() {
         })
     }
 
+    private fun setNickname(nickname: String?, duty: String?)
+    {
+        nickname?.let { binding.tvNickname.text = nickname }
+        duty?.let { binding.tvDuty.text = duty }
+    }
+
+    private fun setHitsCount(likesCnt: Int, commentsCnt: Int) {
+        val cnt = listOf(likesCnt, commentsCnt)
+        val max = cnt.maxOrNull()
+        val range = (max?.rangeTo(1000))
+        binding.tvHitsCnt.text = range?.random().toString()
+    }
     private fun setCategory(category: String) {
         binding.tvMainCategory.text = when (category) {
             getString(R.string.rb_job_designer), getString(R.string.rb_job_marketing), getString(R.string.rb_job_IT), getString(R.string.rb_job_growup)
@@ -67,24 +80,6 @@ class PostViewActivity : AppCompatActivity() {
         }
         binding.tvSubCategory.text = category
     }
-//    private fun initContent() {
-//        intent?.let {
-//            it.getStringExtra("title")?.let { title ->
-//                binding.tvTitle.text = title
-//            }
-//            it.getStringExtra("content")?.let { content ->
-//                binding.tvContent.text = content
-//            }
-//            it.getIntExtra("category", R.string.rb_job_designer).let { sub ->
-//                binding.tvSubCategory.text = getString(sub)
-//                binding.tvMainCategory.text = when (sub) {
-//                    R.id.rb_job_designer, R.id.rb_job_marketing, R.id.rb_job_IT, R.id.rb_job_growup
-//                        -> getString(R.string.tv_job_talk)
-//                    else -> getString(R.string.tv_interest_talk)
-//                }
-//            }
-//        }
-//    }
 
     private fun clickBtnBack() {
         binding.ibBack.setOnClickListener {

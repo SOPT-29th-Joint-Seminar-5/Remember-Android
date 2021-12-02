@@ -67,8 +67,6 @@ class PostWriteActivity : AppCompatActivity() {
             val title = binding.etTitle.text
             val content = binding.etContent.text
             if (title.isNotEmpty() && content.isNotEmpty() && category != null) {
-//                startPostViewActivity(title.toString(), content.toString())
-//                finish()
                 initNetwork()
             }
         }
@@ -93,8 +91,6 @@ class PostWriteActivity : AppCompatActivity() {
                     val data = response.body()?.data
                     //Log.d("postwrite_content", data!!.post.contents)
                     startPostViewActivity(data!!.post.id)
-//                    startActivity(Intent(this@PostWriteActivity, PostViewActivity::class.java))
-//                    finish()
                 }
                 else {
                     Toast.makeText(this@PostWriteActivity, "response error", Toast.LENGTH_SHORT).show()

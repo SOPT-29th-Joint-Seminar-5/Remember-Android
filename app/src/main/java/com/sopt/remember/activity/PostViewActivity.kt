@@ -1,5 +1,6 @@
 package com.sopt.remember.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -83,6 +84,8 @@ class PostViewActivity : AppCompatActivity() {
 
     private fun clickBtnBack() {
         binding.ibBack.setOnClickListener {
+            val intent = Intent(this@PostViewActivity, HomeActivity::class.java)
+            startActivity(intent)
             finish()
         }
     }

@@ -1,5 +1,6 @@
 package com.sopt.remember.fragment
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.ClipDrawable.HORIZONTAL
 import android.os.Bundle
@@ -24,7 +25,7 @@ import retrofit2.Response
 class CommunityFragment : Fragment() {
     private var _binding: FragmentCommunityBinding? = null
     private val binding get() = _binding!!
-    private lateinit var bestPostAdapter : BestPostAdapter
+    private lateinit var bestPostAdapter: BestPostAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,10 +33,15 @@ class CommunityFragment : Fragment() {
     ): View? {
         _binding = FragmentCommunityBinding.inflate(layoutInflater, container, false)
 
-        initNetwork()
         addDivider()        // 구분선
 
         return binding.root
+    }
+
+    override fun onStart() {
+        // 다른 View 로 갔다가 돌아올때 서버로부터 최신상태 데이터 불러오기 위함
+        super.onStart()
+        initNetwork()
     }
 
     private fun initNetwork() {
@@ -50,42 +56,39 @@ class CommunityFragment : Fragment() {
                     val data = response.body()?.data
                     initAdapter(data?.mainList)
                     initImage(data?.image.toString())
-                } else {
+                } else
                     Toast.makeText(requireActivity(), "response error", Toast.LENGTH_SHORT).show()
-                }
             }
 
             override fun onFailure(call: Call<ResponseMainViewData>, t: Throwable) {
                 Log.e("CommunityFragmentNetwork", "error:$t")
             }
         })
+
     }
 
     private fun initAdapter(data: List<ResponseMainViewData.Data.MainList>?) {
-        Log.d("CommunityFragment", "initAdapter")
-
         bestPostAdapter = BestPostAdapter()
         binding.rvBestPost.adapter = bestPostAdapter
 
         if (data != null) {
             bestPostAdapter.bestPostList.addAll(
-                data.map{ BestPostData(it.subject, it.tagName, it.likeCnt, it.commentCnt) }
+                data.map { BestPostData(it.subject, it.tagName, it.likeCnt, it.commentCnt) }
             )
         }
-
         bestPostAdapter.notifyDataSetChanged()
 
-
-        bestPostAdapter.setItemClickListener(object: BestPostAdapter.OnItemClickListener{
+        bestPostAdapter.setItemClickListener(object : BestPostAdapter.OnItemClickListener {
             override fun onClick(v: View, position: Int) {
-                Log.d("ClickListener", position.toString())
-                Intent(context, PostViewActivity::class.java).apply {
-                    putExtra("id", data!![position].id.toInt())
-                }.run{
-                    context?.startActivity(this)
-                }
+                startPostViewActivity(data!![position].id.toInt())
             }
         })
+    }
+
+    private fun startPostViewActivity(id: Int) {
+        val intent = Intent(context, PostViewActivity::class.java)
+        intent.putExtra("id", id)
+        startActivity(intent)
     }
 
     /* 구분선 추가 */

@@ -40,7 +40,6 @@ class BestPostAdapter : RecyclerView.Adapter<BestPostAdapter.BestPostViewHolder>
             LayoutInflater.from(parent.context),
             parent, false
         )
-
         return BestPostViewHolder(binding)
     }
 
@@ -61,11 +60,8 @@ class BestPostAdapter : RecyclerView.Adapter<BestPostAdapter.BestPostViewHolder>
         this.itemClickListener = onItemClickListener
     }
 
-    // (4) setItemClickListener로 설정한 함수 실행
+    // setItemClickListener로 설정한 함수 실행
     private lateinit var itemClickListener : OnItemClickListener
-
-
-
 
     override fun getItemCount(): Int = bestPostList.size
 }

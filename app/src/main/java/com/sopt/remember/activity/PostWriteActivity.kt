@@ -19,18 +19,23 @@ import retrofit2.Response
 
 class PostWriteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPostWriteBinding
-    var category: Int? = null
+    private var category: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPostWriteBinding.inflate(layoutInflater)
 
         clickBtnCategory()
-        checkEmptyText(binding.etTitle)
-        checkEmptyText(binding.etContent)
+        checkEnterStatus()
         clickBtnPosting()
         clickBtnCancel()
+
         setContentView(binding.root)
+    }
+
+    private fun checkEnterStatus(){
+        checkEmptyText(binding.etTitle)
+        checkEmptyText(binding.etContent)
     }
 
     private fun checkEmptyText(et: EditText) {
@@ -39,7 +44,7 @@ class PostWriteActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                changePostingColor()
+                changePostingBtnColor()
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -47,8 +52,8 @@ class PostWriteActivity : AppCompatActivity() {
         })
     }
 
-    private fun changePostingColor() {
-        if (binding.etTitle.text.isNotEmpty() && binding.etContent.text.isNotEmpty() && category != null) {
+    private fun changePostingBtnColor() {
+        if (enteredAll()) {
             binding.tvPosting.setTextColor(getColor(R.color.black))
         } else {
             binding.tvPosting.setTextColor(getColor(R.color.gray2))
@@ -64,12 +69,12 @@ class PostWriteActivity : AppCompatActivity() {
 
     private fun clickBtnPosting() {
         binding.clPosting.setOnClickListener {
-            val title = binding.etTitle.text
-            val content = binding.etContent.text
-            if (title.isNotEmpty() && content.isNotEmpty() && category != null) {
-                initNetwork()
-            }
+            if (enteredAll()) { initNetwork() }
         }
+    }
+
+    private fun enteredAll(): Boolean {
+        return binding.etTitle.text.isNotEmpty() && binding.etContent.text.isNotEmpty() && category != null
     }
 
     private fun initNetwork() {
@@ -82,17 +87,15 @@ class PostWriteActivity : AppCompatActivity() {
         val call: Call<ResponsePostWriteData> =
             ServiceCreator.postService.postWrite(requestPostWriteData)
 
-        call.enqueue(object: Callback<ResponsePostWriteData> {
+        call.enqueue(object : Callback<ResponsePostWriteData> {
             override fun onResponse(
                 call: Call<ResponsePostWriteData>,
                 response: Response<ResponsePostWriteData>
             ) {
                 if (response.isSuccessful) {
                     val data = response.body()?.data
-                    //Log.d("postwrite_content", data!!.post.contents)
                     startPostViewActivity(data!!.post.id)
-                }
-                else {
+                } else {
                     Toast.makeText(this@PostWriteActivity, "response error", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -113,15 +116,13 @@ class PostWriteActivity : AppCompatActivity() {
     private fun clickBtnCategory() {
         binding.clSelectCategory.setOnClickListener {
             // 상단 회색 부분을 클릭했을때 작동
-            // Log.d("ClickBtnCategory", "CheckTiming")
             val bottomSheet = CategoryDialogFragment {
                 category = it
                 category?.let {
                     binding.tvSelectCategory.setText(category!!)
                 }
-                changePostingColor()
+                changePostingBtnColor()
                 // 세부 카테고리를 선택했을때 작동
-                //                // Log.d("ClickBtnCategory", "CheckRadioButton?")
             }
             bottomSheet.show(supportFragmentManager, bottomSheet.tag)
         }

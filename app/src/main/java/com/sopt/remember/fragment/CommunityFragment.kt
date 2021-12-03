@@ -1,22 +1,31 @@
 package com.sopt.remember.fragment
 
+import android.content.Context
+import android.content.Intent
 import android.graphics.drawable.ClipDrawable.HORIZONTAL
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.sopt.remember.databinding.FragmentCommunityBinding
 import com.sopt.remember.adapter.BestPostAdapter
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.bumptech.glide.Glide
+import com.sopt.remember.activity.PostViewActivity
+import com.sopt.remember.activity.ServiceCreator
 import com.sopt.remember.util.BestPostData
+import com.sopt.remember.util.ResponseMainViewData
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class CommunityFragment : Fragment() {
     private var _binding: FragmentCommunityBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var bestPostAdapter : BestPostAdapter
+    private lateinit var bestPostAdapter: BestPostAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,40 +33,75 @@ class CommunityFragment : Fragment() {
     ): View? {
         _binding = FragmentCommunityBinding.inflate(layoutInflater, container, false)
 
-        initAdapter()
-        addDivider()
+        addDivider()        // 구분선
 
         return binding.root
     }
 
+    override fun onStart() {
+        // 다른 View 로 갔다가 돌아올때 서버로부터 최신상태 데이터 불러오기 위함
+        super.onStart()
+        initNetwork()
+    }
+
+    private fun initNetwork() {
+        val call: Call<ResponseMainViewData> = ServiceCreator.postService.getData()
+
+        call.enqueue(object : Callback<ResponseMainViewData> {
+            override fun onResponse(
+                call: Call<ResponseMainViewData>,
+                response: Response<ResponseMainViewData>
+            ) {
+                if (response.isSuccessful) {
+                    val data = response.body()?.data
+                    initAdapter(data?.mainList)
+                    initImage(data?.image.toString())
+                } else
+                    Toast.makeText(requireActivity(), "response error", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onFailure(call: Call<ResponseMainViewData>, t: Throwable) {
+                Log.e("CommunityFragmentNetwork", "error:$t")
+            }
+        })
+
+    }
+
+    private fun initAdapter(data: List<ResponseMainViewData.Data.MainList>?) {
+        bestPostAdapter = BestPostAdapter()
+        binding.rvBestPost.adapter = bestPostAdapter
+
+        if (data != null) {
+            bestPostAdapter.bestPostList.addAll(
+                data.map { BestPostData(it.subject, it.tagName, it.likeCnt, it.commentCnt) }
+            )
+        }
+        bestPostAdapter.notifyDataSetChanged()
+
+        bestPostAdapter.setItemClickListener(object : BestPostAdapter.OnItemClickListener {
+            override fun onClick(v: View, position: Int) {
+                startPostViewActivity(data!![position].id.toInt())
+            }
+        })
+    }
+
+    private fun startPostViewActivity(id: Int) {
+        val intent = Intent(context, PostViewActivity::class.java)
+        intent.putExtra("id", id)
+        startActivity(intent)
+    }
+
+    /* 구분선 추가 */
     private fun addDivider() {
         binding.rvBestPost.addItemDecoration(
             DividerItemDecoration(binding.rvBestPost.context, HORIZONTAL)
         )
     }
 
-
-    private fun initAdapter() {
-
-        Log.d("CommunityFragment", "initAdapter")
-
-        bestPostAdapter = BestPostAdapter()
-        binding.rvBestPost.adapter = bestPostAdapter
-
-        bestPostAdapter.bestPostList.addAll(
-            listOf(
-                BestPostData(1,"우리 모두","카테1",243, 53),
-                BestPostData(2,"고생 많았다~~!!","카테2",243, 53),
-                BestPostData(3,"남은 서버도","카테3",243, 53),
-                BestPostData(4,"홧팅!!!!","카테4",243, 53),
-                BestPostData(5,"내일 할일","카테4",243, 53),
-                BestPostData(6,"아이템 데코레이션-회색 라인","카테4",243, 53),
-                BestPostData(7,"번호 123은 주황색, 나머지는 회색...","카테4",243, 53),
-                BestPostData(8,"번호만 따로 관리하는법 없나...?","도와주면 착한사람..",243, 53),
-            )
-        )
-
-        bestPostAdapter.notifyDataSetChanged()
+    private fun initImage(data: String) {
+        Glide.with(this)
+            .load(data)
+            .into(binding.banner1)
     }
 
     override fun onDestroyView() {

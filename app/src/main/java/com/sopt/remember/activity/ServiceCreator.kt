@@ -12,5 +12,4 @@ object ServiceCreator {
         .build()
 
     val postService: PostService = retrofit.create(PostService::class.java)
-    val mainViewService: MainViewService = retrofit.create(MainViewService::class.java)
 }

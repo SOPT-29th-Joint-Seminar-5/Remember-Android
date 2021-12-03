@@ -1,6 +1,7 @@
 package com.sopt.remember.activity
 
 import com.sopt.remember.util.RequestPostWriteData
+import com.sopt.remember.util.ResponseMainViewData
 import com.sopt.remember.util.ResponsePostViewData
 import com.sopt.remember.util.ResponsePostWriteData
 import retrofit2.Call
@@ -19,4 +20,7 @@ interface PostService {
     fun getPostData(
         @Path("id") id : Int
     ) : Call<ResponsePostViewData>
+
+    @GET("main")
+    fun getData() : Call<ResponseMainViewData>
 }

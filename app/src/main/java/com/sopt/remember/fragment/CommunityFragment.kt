@@ -39,7 +39,7 @@ class CommunityFragment : Fragment() {
     }
 
     private fun initNetwork() {
-        val call: Call<ResponseMainViewData> = ServiceCreator.mainViewService.getData()
+        val call: Call<ResponseMainViewData> = ServiceCreator.postService.getData()
 
         call.enqueue(object : Callback<ResponseMainViewData> {
             override fun onResponse(

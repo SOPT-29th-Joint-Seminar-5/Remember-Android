@@ -24,7 +24,6 @@ import retrofit2.Response
 class CommunityFragment : Fragment() {
     private var _binding: FragmentCommunityBinding? = null
     private val binding get() = _binding!!
-
     private lateinit var bestPostAdapter : BestPostAdapter
 
     override fun onCreateView(
@@ -81,7 +80,7 @@ class CommunityFragment : Fragment() {
             override fun onClick(v: View, position: Int) {
                 Log.d("ClickListener", position.toString())
                 Intent(context, PostViewActivity::class.java).apply {
-                    putExtra("id", 1)
+                    putExtra("id", data!![position].id.toInt())
                 }.run{
                     context?.startActivity(this)
                 }

@@ -1,5 +1,6 @@
 package com.sopt.remember.fragment
 
+import android.content.Intent
 import android.graphics.drawable.ClipDrawable.HORIZONTAL
 import android.os.Bundle
 import android.util.Log
@@ -12,10 +13,10 @@ import com.sopt.remember.adapter.BestPostAdapter
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.bumptech.glide.Glide
+import com.sopt.remember.activity.PostViewActivity
 import com.sopt.remember.activity.ServiceCreator
 import com.sopt.remember.util.BestPostData
 import com.sopt.remember.util.ResponseMainViewData
-import com.sopt.remember.util.ResponsePostViewData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,21 +34,15 @@ class CommunityFragment : Fragment() {
         _binding = FragmentCommunityBinding.inflate(layoutInflater, container, false)
 
         initNetwork()
-        addDivider()
+        addDivider()        // 구분선
 
         return binding.root
-    }
-
-    private fun addDivider() {
-        binding.rvBestPost.addItemDecoration(
-            DividerItemDecoration(binding.rvBestPost.context, HORIZONTAL)
-        )
     }
 
     private fun initNetwork() {
         val call: Call<ResponseMainViewData> = ServiceCreator.mainViewService.getData()
 
-        call.enqueue(object: Callback<ResponseMainViewData> {
+        call.enqueue(object : Callback<ResponseMainViewData> {
             override fun onResponse(
                 call: Call<ResponseMainViewData>,
                 response: Response<ResponseMainViewData>
@@ -55,9 +50,7 @@ class CommunityFragment : Fragment() {
                 if (response.isSuccessful) {
                     val data = response.body()?.data
                     initAdapter(data?.mainList)
-                    if (data != null) {
-                        initImage(data)
-                    }
+                    initImage(data?.image.toString())
                 } else {
                     Toast.makeText(requireActivity(), "response error", Toast.LENGTH_SHORT).show()
                 }
@@ -82,11 +75,30 @@ class CommunityFragment : Fragment() {
         }
 
         bestPostAdapter.notifyDataSetChanged()
+
+
+        bestPostAdapter.setItemClickListener(object: BestPostAdapter.OnItemClickListener{
+            override fun onClick(v: View, position: Int) {
+                Log.d("ClickListener", position.toString())
+                Intent(context, PostViewActivity::class.java).apply {
+                    putExtra("id", 1)
+                }.run{
+                    context?.startActivity(this)
+                }
+            }
+        })
     }
 
-    private fun initImage(data: ResponseMainViewData.Data) {
+    /* 구분선 추가 */
+    private fun addDivider() {
+        binding.rvBestPost.addItemDecoration(
+            DividerItemDecoration(binding.rvBestPost.context, HORIZONTAL)
+        )
+    }
+
+    private fun initImage(data: String) {
         Glide.with(this)
-            .load(data.image)
+            .load(data)
             .into(binding.banner1)
     }
 
